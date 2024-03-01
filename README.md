@@ -10,7 +10,7 @@ This repository demonstrates how to use the Python library shot-scraper to scrap
 
 ![Akron Women's Basketball Roster](akron_roster.png)
 
-Using your browser's inspect tool, you can see that the structure looks fairly normal: a lot of <div> tags, and player information is contained in <table> tag. Seems simple, right? Just fire up our friends requests and BeautifulSoup and it should be easy:
+Using your browser's inspect tool, you can see that the structure looks fairly normal: a lot of div tags, and player information is contained in <table> tag. Seems simple, right? Just fire up a Python shell and use our friends requests and BeautifulSoup. It should be easy, right?
 
 ```
 >>> import requests
@@ -21,6 +21,8 @@ Using your browser's inspect tool, you can see that the structure looks fairly n
 
 >>>
 ```
+
+Right?
 
 Who are you going to believe, this code or your lying eyes? There is a table on that page, but it is getting loaded _after_ the page loads, which means that requests won't "see" it in the source code. Yes, you could play around with HTML sessions or use selenium to emulate a browser, but that table and its rows are right there. Like they are taunting you.
 
