@@ -32,5 +32,18 @@ Simon Willison, friend of journalists who need to work with data, built this too
 
 But if you're working with websites at all in 2024, that means you're likely working with JavaScript. And that's where shot-scraper really shines, because it can execute JavaScript on remote pages just as if you opened up the console log and started typing.
 
+Let's try this out the old-fashioned way, in that console log. Here we can interact with the document as it appears in the browser.
 
-  
+![console fun!](akron_console.png)
+
+If you can interact with one HTML element on the page, you can do that with multiple elements. Like rows in a table, for example. The way we do that in JavaScript is by using `document.querySelector()` (for one element) and `document.querySelectorAll()` (for multiple elements).
+
+Take a look at `demo.py`, and in particular lines 10-23. See that JavaScript code? Copy the part I've highlighted below:
+
+![copy me](akron_js.png)
+
+And paste it into the console. You should see something like this:
+
+![you have made data](akron_array.png)
+
+Go ahead, click inside one of those 14 objects. Lovely, lovely JSON. How did we do that? Let's go back to the code and see.
