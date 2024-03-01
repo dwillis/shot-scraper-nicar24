@@ -10,7 +10,7 @@ This repository demonstrates how to use the Python library shot-scraper to scrap
 
 ![Akron Women's Basketball Roster](akron_roster.png)
 
-Using your browser's inspect tool, you can see that the structure looks fairly normal: a lot of div tags, and player information is contained in <table> tag. Seems simple, right? Just fire up a Python shell and use our friends requests and BeautifulSoup. It should be easy, right?
+Using your browser's inspect tool, you can see that the structure looks fairly normal: a lot of div tags, and player information is contained in a table tag. Seems simple, right? Just fire up a Python shell and use our friends requests and BeautifulSoup. It should be easy, right?
 
 ```
 >>> import requests
