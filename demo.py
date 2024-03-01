@@ -1,30 +1,30 @@
 import subprocess
 import json
 
-def fetch_and_parse_byu(season):
-    name = 'Brigham Young'
-    ncaa_id = 77
+def fetch_and_parse_akron(season):
+    name = 'Akron'
+    ncaa_id = 5
 
     # JavaScript to be executed by shot-scraper
     javascript_code = """
-    Array.from(document.querySelectorAll('.roster__players .roster-card-item'), el => {
-     const id = '';
-     const name = el.querySelector('a').innerText;
-     const year = el.querySelectorAll('.roster-player-card-profile-field')[0].querySelectorAll('span')[1].innerText;
-     const height = el.querySelectorAll('.roster-player-card-profile-field')[0].querySelectorAll('span')[0].innerText;
-     const position = el.querySelector('.roster-card-item__position').innerText;
-     const hometown = el.querySelector(".roster-player-card-profile-field__value--hometown").innerText;
-     hs_el = el.querySelector(".roster-player-card-profile-field__value--previous-school");
-     const high_school = hs_el ? hs_el.innerText : '';
-     const previous_school = '';
-     const jersey = el.querySelector(".roster-card-item__jersey-number").innerText;
-     const url =el.querySelector("a")['href'];
-     return {id, name, year, hometown, high_school, previous_school, height, position, jersey, url};
+    Array.from(document.querySelectorAll('.s-table-body__row'), el => {
+        const id = '';
+        const name = el.querySelectorAll('td')[1].innerText;
+        const year = el.querySelectorAll('td')[2].innerText;
+        const height = el.querySelectorAll('td')[3].innerText;
+        const position = el.querySelectorAll('td')[4].innerText;
+        const hometown = el.querySelectorAll('td')[5].innerText;
+        hs_el = el.querySelectorAll('td')[6];
+        const high_school = hs_el ? hs_el.innerText : '';
+        const previous_school = '';
+        const jersey = el.querySelectorAll('td')[0].innerText;
+        const url = el.querySelectorAll('td')[1].querySelector('a')['href']
+        return {id, name, year, hometown, high_school, previous_school, height, position, jersey, url};
     })
     """
 
     roster = []
-    url = "https://byucougars.com/sports/womens-basketball/roster/season/" + season
+    url = "https://gozips.com/sports/womens-basketball/roster/" + season
     # Execute shot-scraper with the given JavaScript
     try:
         result = subprocess.check_output(['shot-scraper', 'javascript', url, javascript_code, "--user-agent", "Firefox"])
