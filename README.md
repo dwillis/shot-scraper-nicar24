@@ -6,6 +6,12 @@ You can follow along with this hands-on session using GitHub Codespaces. From th
 
 ![Open in a codespace](codespaces.png)
 
+Once your codespace is up and running, go ahead and install the necessary libraries in the terminal like so:
+
+```
+pip install -r requirements.txt
+```
+
 This repository demonstrates how to use the Python library shot-scraper to scrape websites that rely on a lot of JavaScript and might seem straightforward to scrape but are not. Websites like [this one](https://gozips.com/sports/womens-basketball/roster):
 
 ![Akron Women's Basketball Roster](akron_roster.png)
